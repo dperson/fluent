@@ -9,9 +9,6 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     gem install fluentd && \
     gem install fluent-plugin-elasticsearch && \
     gem install fluent-plugin-record-reformer && \
-    groupadd -r fluent && useradd -r -g fluent -m fluent && \
-    cp -a /root/.bundle /root/.gem* ~fluent/ && \
-    chown -Rh fluent. ~fluent && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 COPY fluent.conf /etc/fluent/

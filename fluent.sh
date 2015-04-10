@@ -65,6 +65,5 @@ elif [[ $# -ge 1 ]]; then
     echo "ERROR: command not found: $1"
     exit 13
 else
-    exec su -l fluent -s /bin/bash -c "exec /usr/local/bundle/bin/fluentd \\
-                -c /etc/fluent/fluent.conf"
+    exec /usr/local/bundle/bin/fluentd -c /etc/fluent/fluent.conf
 fi
