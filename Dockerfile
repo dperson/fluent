@@ -7,10 +7,10 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     apt-get install -qqy --no-install-recommends libcurl4-gnutls-dev make \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     gem install fluentd --no-ri --no-rdoc && \
-    gem install fluent-plugin-elasticsearch --no-ri --no-rdoc && \
+    /usr/lib/fluent/ruby/bin/fluent-gem install fluent-plugin-elasticsearch && \
+    /usr/lib/fluent/ruby/bin/fluent-gem install fluent-plugin-record-reformer&&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
-#    gem install fluent-plugin-record-reformer --no-ri --no-rdoc && \
 COPY fluent.conf /etc/fluent/
 COPY fluent.sh /usr/bin/
 
