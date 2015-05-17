@@ -59,7 +59,7 @@ shift $(( OPTIND - 1 ))
 
 [[ "${TIMEZONE:-""}" ]] && timezone "$TIMEZONE"
 
-if ps -ef | grep -q fluentd; then
+if ps -ef | egrep -v grep | grep -q fluentd; then
     echo "Service already running, please restart container to apply changes"
 elif [[ $# -ge 1 && -x $(which $1 2>&-) ]]; then
     exec "$@"
