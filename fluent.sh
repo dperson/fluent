@@ -59,13 +59,13 @@ shift $(( OPTIND - 1 ))
 
 [[ "${TIMEZONE:-""}" ]] && timezone "$TIMEZONE"
 
-if ps -ef | egrep -v grep | grep -q fluentd; then
-    echo "Service already running, please restart container to apply changes"
-elif [[ $# -ge 1 && -x $(which $1 2>&-) ]]; then
+if [[ $# -ge 1 && -x $(which $1 2>&-) ]]; then
     exec "$@"
 elif [[ $# -ge 1 ]]; then
     echo "ERROR: command not found: $1"
     exit 13
+elif ps -ef | egrep -v grep | grep -q fluentd; then
+    echo "Service already running, please restart container to apply changes"
 else
     exec /usr/local/bundle/bin/fluentd -c /etc/fluent/fluent.conf
 fi
