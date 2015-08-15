@@ -1,4 +1,4 @@
-[![logo](https://www.fluentd.org/assets/img/miscellany/fluentd-logo.png)](https://www.fluentd.org/)
+[![logo](https://raw.githubusercontent.com/dperson/fluent/master/logo.png)](https://www.fluentd.org/)
 
 # Fluent
 
