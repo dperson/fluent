@@ -14,6 +14,8 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
 COPY fluent.conf /etc/fluent/
 COPY fluent.sh /usr/bin/
 
+VOLUME ["/run", "/tmp", "/var/cache", "/var/lib", "/var/log", "/var/tmp"]
+
 EXPOSE 5140/udp
 
 ENTRYPOINT ["fluent.sh"]
