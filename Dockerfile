@@ -1,5 +1,5 @@
 FROM ruby
-MAINTAINER David Personette <dperson@dperson.com>
+MAINTAINER David Personette <dperson@gmail.com>
 
 # Install fluentd
 RUN export DEBIAN_FRONTEND='noninteractive' && \
