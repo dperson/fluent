@@ -5,6 +5,7 @@ MAINTAINER David Personette <dperson@gmail.com>
 RUN export DEBIAN_FRONTEND='noninteractive' && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends libcurl4-openssl-dev make \
+                psutils \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     gem install fluentd && \
     fluent-gem install fluent-plugin-elasticsearch && \
