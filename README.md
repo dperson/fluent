@@ -29,7 +29,7 @@ When started Fluent container will listen on port 5140/udp.
 
     The 'command' (if provided and valid) will be run instead of fluentd
 
-ENVIRONMENT VARIABLES (only available with `docker run`)
+ENVIRONMENT VARIABLES
 
  * `TZ` - As above, set a zoneinfo timezone, IE `EST5EDT`
 
